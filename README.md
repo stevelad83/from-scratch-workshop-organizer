@@ -1,3 +1,22 @@
+![](./assets/wireframe.png)
+
+## Plan
+
+# Set up DB in Supabase
+
+# Landing Page (Workshops)
+
+1. get workshops with participants
+2. loop through participants and make clickable to delete
+3. onclick => deleteParticipant() (fetch-utils)
+
+# Create page
+
+1. HTML form inputs for name, contact_info, placeholder <select> for workshops
+2. getWorkshops and dynamically render <select> <options>
+3. createParticipant() . (fetch-utils)
+4. onsubmit => get and send data to supabase (createParticipant())
+
 ## The Golden Rule:
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
