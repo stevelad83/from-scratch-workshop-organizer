@@ -31,7 +31,11 @@ export async function signOutUser() {
 
 export async function fetchWorkshops() {
     const response = await client.from('workshops').select('*, participants(*)');
-    console.log(response.data);
+    return checkError(response);
+}
+
+export async function deleteParticipant(id) {
+    const response = await client.from('participants').delete().match({ id: id }).single();
     return checkError(response);
 }
 

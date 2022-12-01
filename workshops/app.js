@@ -19,9 +19,14 @@ signOutBtn.addEventListener('click', () => {
     signOutUser();
 });
 /* Display Functions */
-function displayWorkshops() {
-    workshopList.innerHTML = '';
+export function displayWorkshops() {
+    console.log(workshopList);
+    workshopsContainer.textContent = '';
     for (let workshop of workshopList) {
         workshopsContainer.append(renderWorkshop(workshop));
     }
+}
+
+export async function pullFromDatabase() {
+    workshopList = await fetchWorkshops();
 }

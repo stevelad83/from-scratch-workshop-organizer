@@ -1,3 +1,6 @@
+import { deleteParticipant, fetchWorkshops } from './fetch-utils.js';
+import { displayWorkshops, pullFromDatabase } from './workshops/app.js';
+
 export function renderWorkshop(workshop) {
     const workshopEl = document.createElement('div');
     const workshopNameEl = document.createElement('h3');
@@ -20,6 +23,12 @@ export function renderParticipant(participant) {
     participantName.textContent = participant.name;
     participantContact.textContent = participant.contact_info;
     participantEl.append(participantName, participantContact);
+
+    participantEl.addEventListener('click', async () => {
+        await deleteParticipant(participant.id);
+        await pullFromDatabase();
+        displayWorkshops();
+    });
 
     return participantEl;
 }
