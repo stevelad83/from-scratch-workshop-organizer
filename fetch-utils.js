@@ -28,3 +28,8 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function fetchWorkshops() {
+    const response = await client.from('workshops').select('*, participants(*)');
+    console.log(response.data);
+}
