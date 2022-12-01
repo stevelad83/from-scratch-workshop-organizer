@@ -10,6 +10,11 @@ export function renderWorkshop(workshop) {
     for (let participant of workshop.participants) {
         participantsEl.append(renderParticipant(participant));
     }
+    if (workshop.participants.length < 1) {
+        participantsEl.append(renderParticipant({ name: '', contact_info: 'no participants' }));
+    }
+    workshopEl.classList.add('workshop');
+    participantsEl.classList.add('participants-list');
 
     workshopEl.append(workshopNameEl, participantsEl);
     return workshopEl;
@@ -22,6 +27,8 @@ export function renderParticipant(participant) {
 
     participantName.textContent = participant.name;
     participantContact.textContent = participant.contact_info;
+    participantName.classList.add('participant-name');
+    participantContact.classList.add('participant-contact');
     participantEl.append(participantName, participantContact);
 
     participantEl.addEventListener('click', async () => {

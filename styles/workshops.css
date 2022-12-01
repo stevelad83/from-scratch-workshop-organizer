@@ -1,0 +1,51 @@
+header {
+    text-align: center;
+}
+
+nav {
+    position: absolute;
+    right: 3%;
+}
+
+main > h3 {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#workshop-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-top: thick double darkblue;
+    border-bottom: thick double darkblue;
+    gap: 2em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.workshop {
+    border: 3px dashed lightblue;
+    width: 66%;
+    text-align: center;
+    line-height: 0.8em;
+}
+
+.workshop > h3 {
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.participants-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    line-height: 0.5em;
+}
+
+.participant-name {
+    font-weight: bolder;
+}
+
+.participant-contact {
+    font-style: italic;
+}
