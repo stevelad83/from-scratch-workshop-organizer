@@ -1,6 +1,7 @@
 import { fetchWorkshops } from '../fetch-utils.js';
 
 const workshopSelectEl = document.getElementById('workshop-select');
+const form = document.querySelector('.add-participant-form');
 
 window.addEventListener('load', async () => {
     const workshops = await fetchWorkshops();
@@ -12,4 +13,15 @@ window.addEventListener('load', async () => {
         option.textContent = workshop.name;
         workshopSelectEl.append(option);
     }
+});
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const participantData = new FormData(form);
+
+    // grabbing data from form, pass it to createParticipant function to add to DB
+
+    // reset form
+
+    // redirect to workshop page
 });

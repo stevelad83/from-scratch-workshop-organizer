@@ -39,6 +39,17 @@ export async function deleteParticipant(id) {
     return checkError(response);
 }
 
+export async function createParticipant(participant) {
+    const response = await client
+        .from('particapants')
+        .insert({
+            name: participant.name,
+            contact_info: participant.contact_info,
+            workshop_id: participant.workshop_id,
+            user_id: client.auth.user().id,
+        });
+}
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
