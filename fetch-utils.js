@@ -24,7 +24,7 @@ export async function signInUser(email, password) {
 }
 
 export async function signOutUser() {
-    return await client.auth.signOut();
+    await client.auth.signOut();
 }
 
 /* Data functions */
@@ -32,4 +32,9 @@ export async function signOutUser() {
 export async function fetchWorkshops() {
     const response = await client.from('workshops').select('*, participants(*)');
     console.log(response.data);
+    return checkError(response);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
 }

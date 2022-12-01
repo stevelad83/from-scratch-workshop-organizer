@@ -5,7 +5,7 @@ import { getUser, signInUser, signUpUser } from '../fetch-utils.js';
 // user probably navigated here by the url.
 // Send them back to home page (they need to sign out first!)
 const user = getUser();
-if (user) location.replace('/');
+if (user) location.replace('../workshops/');
 
 /* Get DOM (getElementById and friends)*/
 const authForm = document.getElementById('auth-form');

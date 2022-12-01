@@ -15,7 +15,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="create.js"></script>
+        <script type="module" src="./app.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,31 +34,15 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Add a Participant</p>
+            <p class="title">Supabase Web App</p>
             <nav>
-                <a href="../workshops/">Workshop List</a>
-                <a id="sign-out-link" href="../auth/">Sign Out</a>
+                <a href="../create/">Add Participant</a>
+                <a id="sign-out-link" href="../auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <form class="add-participant-form">
-                <label
-                    >Participant Name:
-                    <input name="participant-name" />
-                </label>
-
-                <label
-                    >Contact:
-                    <input name="participant-contact" />
-                </label>
-
-                <label
-                    >Workshop Attending:
-                    <select name="workshop-attending"></select>
-                </label>
-                <button>Submit</button>
-            </form>
+            <section id="workshop-container"></section>
         </main>
     </body>
 </html>
