@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+}
+
+form > * {
+    width: 60%;
+}
+header {
+    text-align: center;
+}
+
+nav {
+    position: absolute;
+    right: 3%;
+}
