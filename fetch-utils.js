@@ -40,14 +40,13 @@ export async function deleteParticipant(id) {
 }
 
 export async function createParticipant(participant) {
-    const response = await client
-        .from('particapants')
-        .insert({
-            name: participant.name,
-            contact_info: participant.contact_info,
-            workshop_id: participant.workshop_id,
-            user_id: client.auth.user().id,
-        });
+    const response = await client.from('participants').insert({
+        name: participant.name,
+        contact_info: participant.contact_info,
+        workshop_id: participant.workshop_id,
+        user_id: client.auth.user().id,
+    });
+    return checkError(response);
 }
 
 function checkError({ data, error }) {

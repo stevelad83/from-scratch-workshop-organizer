@@ -20,7 +20,6 @@ signOutBtn.addEventListener('click', () => {
 });
 /* Display Functions */
 export function displayWorkshops() {
-    console.log(workshopList);
     workshopsContainer.textContent = '';
     for (let workshop of workshopList) {
         workshopsContainer.append(renderWorkshop(workshop));
